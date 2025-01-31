@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Permit Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Import Permit Application</h1>
+        <form id="importPermitForm" action="http://localhost:5000/submit" method="POST">
+            <!-- Business Owner Details -->
+            <fieldset>
+                <legend><i class="fas fa-info-circle"></i> Business Owner Details</legend>
+                <label for="citizenship">Applicant Citizenship<span style="color: red;">*</span></label>
+                <select id="citizenship" name="citizenship" required>
+                    <option value="">Select citizenship</option>
+                    <option value="rwandan">Rwandan</option>
+                    <option value="foreigner">Foreigner</option>
+                </select>
+
+                <div id="idNumberField">
+                    <label for="id_number">ID Number<span style="color: red;">*</span></label>
+                    <input type="text" id="id_number" name="id_number" minlength="16" maxlength="16"
+                        placeholder="Enter ID Number">
+                </div>
+
+                <div id="passportField">
+                    <label for="passport_number">Passport Number<span style="color: red;">*</span></label>
+                    <input type="text" id="passport_number" name="passport_number" placeholder="Enter Passport Number">
+                </div>
+
+                <label for="full_name">Full Name<span style="color: red;">*</span></label>
+                <input type="text" id="full_name" name="full_name" required placeholder="Enter Full Name">
+
+                <label for="phone">Phone Number<span style="color: red;">*</span></label>
+                <div class="phone-container">
+                    <select id="country_code" name="country_code">
+                        <option value="+250">+250</option>
+                        <option value="+1">+1</option>
+                        <!-- Add additional country codes as needed -->
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number">
+                </div>
+
+                <label for="email">Email Address<span style="color: red;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter Email">
+            </fieldset>
+
+            <!-- Business Details -->
+            <fieldset>
+                <legend><i class="fas fa-info-circle"></i> Business Details</legend>
+                <label for="business_type">Business Type<span style="color: red;">*</span></label>
+                <select id="business_type" name="business_type" required>
+                    <option value="">Select Business Type</option>
+                    <option value="retailer">Retailer</option>
+                    <option value="wholesale">Wholesale</option>
+                    <option value="manufacturer">Manufacturer</option>
+                </select>
+
+                <label for="company_name">Company Name<span style="color: red;">*</span></label>
+                <input type="text" id="company_name" name="company_name" required placeholder="Enter Company Name">
+
+                <label for="tin">TIN Number (9 Digits)<span style="color: red;">*</span></label>
+                <input type="text" id="tin" name="tin" pattern="\d{9}" required placeholder="Enter TIN Number">
+
+                <label for="registration_date">Registration Date<span style="color: red;">*</span></label>
+                <input type="date" id="registration_date" name="registration_date" required>
+            </fieldset>
+
+            <!-- Product Information -->
+            <fieldset>
+                <legend><i class="fas fa-info-circle"></i> Product Information</legend>
+                <label for="import_purpose">Purpose of Importation<span style="color: red;">*</span></label>
+                <select id="import_purpose" name="import_purpose" required>
+                    <option value="">Select Purpose</option>
+                    <option value="direct_sale">Direct Sale</option>
+                    <option value="personal_use">Personal Use</option>
+                    <option value="trial_use">Trial Use</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div id="otherPurposeField">
+                    <label for="other_purpose">Specify Other Purpose<span style="color: red;">*</span></label>
+                    <input type="text" id="other_purpose" name="other_purpose" placeholder="Specify Purpose">
+                </div>
+
+                <label for="product_category">Product Category<span style="color: red;">*</span></label>
+                <select id="product_category" name="product_category" required>
+                    <option value="">Select Category</option>
+                    <option value="construction">Construction Materials</option>
+                    <option value="chemicals">Chemicals</option>
+                    <option value="general">General Purpose</option>
+                </select>
+
+                <label for="product_name">Product Name<span style="color: red;">*</span></label>
+                <input type="text" id="product_name" name="product_name" required placeholder="Enter Product Name">
+
+                <label for="quantity">Quantity<span style="color: red;">*</span></label>
+                <input type="number" id="quantity" name="quantity" min="1" required placeholder="Enter Quantity">
+
+                <label for="description">Description<span style="color: red;">*</span></label>
+                <textarea id="description" name="description" required placeholder="Describe the product"></textarea>
+            </fieldset>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+</html>
